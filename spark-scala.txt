@@ -1,0 +1,44 @@
+start-dfs.sh
+or
+./start-dfs.sh
+./start-yarn.sh
+Jps
+hadoop version
+hive --version
+
+hadoop@saurabh-VirtualBox:~$ cd spark
+hadoop@saurabh-VirtualBox:~/spark$ cd bin
+hadoop@saurabh-VirtualBox:~/spark/bin$ ./spark-shell
+24/04/28 09:22:19 WARN Utils: Your hostname, saurabh-VirtualBox resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+24/04/28 09:22:19 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+24/04/28 09:22:19 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+Spark context Web UI available at http://10.0.2.15:4040
+Spark context available as 'sc' (master = local[*], app id = local-1714276348939).
+Spark session available as 'spark'.
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /___/ .__/\_,_/_/ /_/\_\   version 2.4.3
+      /_/
+         
+Using Scala version 2.11.12 (OpenJDK 64-Bit Server VM, Java 1.8.0_402)
+Type in expressions to have them evaluated.
+Type :help for more information.
+
+scala> object ExampleString{
+     | def main(arg:Array[String]){
+     | val text:String="Welcome to scala programming world.";
+     | println(text);
+     | }
+     | }
+defined object ExampleString
+
+scala> ExampleString.main(Array())
+Welcome to scala programming world.
+
+scala> 
+

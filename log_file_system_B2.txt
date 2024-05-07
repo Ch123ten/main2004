@@ -1,0 +1,276 @@
+hadoop@saurabh-VirtualBox:~$ start-all.sh
+WARNING: Attempting to start all Apache Hadoop daemons as hadoop in 10 seconds.
+WARNING: This is not a recommended production deployment configuration.
+WARNING: Use CTRL-C to abort.
+Starting namenodes on [localhost]
+Starting datanodes
+Starting secondary namenodes [saurabh-VirtualBox]
+Starting resourcemanager
+Starting nodemanagers
+hadoop@saurabh-VirtualBox:~$ jps
+10279 Jps
+10007 ResourceManager
+9786 SecondaryNameNode
+9581 DataNode
+9454 NameNode
+10127 NodeManager
+hadoop@saurabh-VirtualBox:~$ ls
+Desktop    Downloads  hadoop-3.3.6.tar.gz  hadoop.txt  log_file_system_B2.txt  Pictures  snap   spark-2.4.3-bin-hadoop2.7.tgz  Templates
+Documents  hadoop     hadoopdata           ip          Music                   Public    spark  spark-scala.txt                Videos
+hadoop@saurabh-VirtualBox:~$ sudo mkdir analogs
+[sudo] password for hadoop: 
+Sorry, try again.
+[sudo] password for hadoop: 
+hadoop@saurabh-VirtualBox:~$ ls
+analogs    Downloads            hadoopdata  log_file_system_B2.txt  Public  spark-2.4.3-bin-hadoop2.7.tgz  Videos
+Desktop    hadoop               hadoop.txt  Music                   snap    spark-scala.txt
+Documents  hadoop-3.3.6.tar.gz  ip          Pictures                spark   Templates
+hadoop@saurabh-VirtualBox:~$ sudo chmod -R 777 analogs/
+hadoop@saurabh-VirtualBox:~$ sudo chown -R hadoop analogs/
+hadoop@saurabh-VirtualBox:~$ cd analogs
+hadoop@saurabh-VirtualBox:~/analogs$ sudo cp /home/hadoop/Downloads/* .
+hadoop@saurabh-VirtualBox:~/analogs$ ls
+hadoop-mapreduce-example-file.txt  SalesCountryDriver.java  SalesCountryReducer.java  SalesJan2009.csv  SalesMapper.java
+hadoop@saurabh-VirtualBox:~/analogs$ sudo chmod +r *.*
+hadoop@saurabh-VirtualBox:~/analogs$ pwd
+/home/hadoop/analogs
+hadoop@saurabh-VirtualBox:~/analogs$ hadoop classpath
+/home/hadoop/hadoop/etc/hadoop:/home/hadoop/hadoop/share/hadoop/common/lib/*:/home/hadoop/hadoop/share/hadoop/common/*:/home/hadoop/hadoop/share/hadoop/hdfs:/home/hadoop/hadoop/share/hadoop/hdfs/lib/*:/home/hadoop/hadoop/share/hadoop/hdfs/*:/home/hadoop/hadoop/share/hadoop/mapreduce/*:/home/hadoop/hadoop/share/hadoop/yarn:/home/hadoop/hadoop/share/hadoop/yarn/lib/*:/home/hadoop/hadoop/share/hadoop/yarn/*
+hadoop@saurabh-VirtualBox:~/analogs$ export CLASSPATH="/home/hadoop/hadoop/etc/hadoop:/home/hadoop/hadoop/share/hadoop/common/lib/*:/home/hadoop/hadoop/share/hadoop/common/*:/home/hadoop/hadoop/share/hadoop/hdfs:/home/hadoop/hadoop/share/hadoop/hdfs/lib/*:/home/hadoop/hadoop/share/hadoop/hdfs/*:/home/hadoop/hadoop/share/hadoop/mapreduce/*:/home/hadoop/hadoop/share/hadoop/yarn:/home/hadoop/hadoop/share/hadoop/yarn/lib/*:/home/hadoop/hadoop/share/hadoop/yarn/*"
+hadoop@saurabh-VirtualBox:~/analogs$ ls
+hadoop-mapreduce-example-file.txt  SalesCountryDriver.java  SalesCountryReducer.java  SalesJan2009.csv  SalesMapper.java
+hadoop@saurabh-VirtualBox:~/analogs$ javac -d . SalesMapper.java SalesCountryDriver.java SalesCountryReducer.java
+hadoop@saurabh-VirtualBox:~/analogs$ ls
+hadoop-mapreduce-example-file.txt  SalesCountry  SalesCountryDriver.java  SalesCountryReducer.java  SalesJan2009.csv  SalesMapper.java
+hadoop@saurabh-VirtualBox:~/analogs$ cd SalesCountry
+hadoop@saurabh-VirtualBox:~/analogs/SalesCountry$ ls
+SalesCountryDriver.class  SalesCountryReducer.class  SalesMapper.class
+hadoop@saurabh-VirtualBox:~/analogs/SalesCountry$ cd ..
+hadoop@saurabh-VirtualBox:~/analogs$ sudo gedit Manifest.txt
+//(note-> After opening the Manifest.txt file add the following lines-->>Main-Class: SalesCountry.SalesCountryDriver)
+(gedit:11418): dconf-WARNING **: 17:29:18.350: failed to commit changes to dconf: Failed to execute child process “dbus-launch” (No such file or directory)
+
+(gedit:11418): dconf-WARNING **: 17:29:18.360: failed to commit changes to dconf: Failed to execute child process “dbus-launch” (No such file or directory)
+
+(gedit:11418): dconf-WARNING **: 17:29:19.392: failed to commit changes to dconf: Failed to execute child process “dbus-launch” (No such file or directory)
+
+(gedit:11418): dconf-WARNING **: 17:29:19.393: failed to commit changes to dconf: Failed to execute child process “dbus-launch” (No such file or directory)
+
+(gedit:11418): dconf-WARNING **: 17:29:19.393: failed to commit changes to dconf: Failed to execute child process “dbus-launch” (No such file or directory)
+
+** (gedit:11418): WARNING **: 17:30:31.103: Set document metadata failed: Setting attribute metadata::gedit-spell-language not supported
+
+** (gedit:11418): WARNING **: 17:30:31.103: Set document metadata failed: Setting attribute metadata::gedit-encoding not supported
+
+** (gedit:11418): WARNING **: 17:30:31.344: Set document metadata failed: Setting attribute metadata::gedit-spell-language not supported
+
+** (gedit:11418): WARNING **: 17:30:31.345: Set document metadata failed: Setting attribute metadata::gedit-encoding not supported
+
+** (gedit:11418): WARNING **: 17:30:31.500: Set document metadata failed: Setting attribute metadata::gedit-spell-language not supported
+
+** (gedit:11418): WARNING **: 17:30:31.500: Set document metadata failed: Setting attribute metadata::gedit-encoding not supported
+
+** (gedit:11418): WARNING **: 17:30:32.398: Set document metadata failed: Setting attribute metadata::gedit-spell-language not supported
+
+** (gedit:11418): WARNING **: 17:30:32.398: Set document metadata failed: Setting attribute metadata::gedit-encoding not supported
+
+** (gedit:11418): WARNING **: 17:30:32.556: Set document metadata failed: Setting attribute metadata::gedit-spell-language not supported
+
+** (gedit:11418): WARNING **: 17:30:32.557: Set document metadata failed: Setting attribute metadata::gedit-encoding not supported
+
+** (gedit:11418): WARNING **: 17:30:32.688: Set document metadata failed: Setting attribute metadata::gedit-spell-language not supported
+
+** (gedit:11418): WARNING **: 17:30:32.689: Set document metadata failed: Setting attribute metadata::gedit-encoding not supported
+
+** (gedit:11418): WARNING **: 17:30:42.504: Set document metadata failed: Setting attribute metadata::gedit-position not supported
+
+(gedit:11418): dconf-WARNING **: 17:30:42.520: failed to commit changes to dconf: Failed to execute child process “dbus-launch” (No such file or directory)
+hadoop@saurabh-VirtualBox:~/analogs$ jar -cfm analogs.jar Manifest.txt SalesCountry/*.class
+hadoop@saurabh-VirtualBox:~/analogs$ ls
+analogs.jar                        Manifest.txt  SalesCountryDriver.java   SalesJan2009.csv
+hadoop-mapreduce-example-file.txt  SalesCountry  SalesCountryReducer.java  SalesMapper.java
+hadoop@saurabh-VirtualBox:~/analogs$ sudo mkdir ~/input3000
+hadoop@saurabh-VirtualBox:~/analogs$ sudo cp SalesJan2009.csv ~/input3000
+hadoop@saurabh-VirtualBox:~/analogs$ /home/hadoop/hadoop/bin/hdfs dfs -put ~/input3000
+hadoop@saurabh-VirtualBox:~/analogs$ /home/hadoop/hadoop/bin/hdfs dfs -put ~/input3000 /
+hadoop@saurabh-VirtualBox:~/analogs$ /home/hadoop/hadoop/bin/hadoop jar analogs.jar /input3000 /output3000
+2024-04-29 18:10:34,488 INFO impl.MetricsConfig: Loaded properties from hadoop-metrics2.properties
+2024-04-29 18:10:34,647 INFO impl.MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+2024-04-29 18:10:34,647 INFO impl.MetricsSystemImpl: JobTracker metrics system started
+2024-04-29 18:10:34,667 WARN impl.MetricsSystemImpl: JobTracker metrics system already initialized!
+2024-04-29 18:10:34,859 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+2024-04-29 18:10:35,046 INFO mapred.FileInputFormat: Total input files to process : 1
+2024-04-29 18:10:35,081 INFO mapreduce.JobSubmitter: number of splits:1
+2024-04-29 18:10:35,273 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_local583069057_0001
+2024-04-29 18:10:35,273 INFO mapreduce.JobSubmitter: Executing with tokens: []
+2024-04-29 18:10:35,490 INFO mapreduce.Job: The url to track the job: http://localhost:8080/
+2024-04-29 18:10:35,491 INFO mapred.LocalJobRunner: OutputCommitter set in config null
+2024-04-29 18:10:35,493 INFO mapreduce.Job: Running job: job_local583069057_0001
+2024-04-29 18:10:35,493 INFO mapred.LocalJobRunner: OutputCommitter is org.apache.hadoop.mapred.FileOutputCommitter
+2024-04-29 18:10:35,500 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2024-04-29 18:10:35,500 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2024-04-29 18:10:35,599 INFO mapred.LocalJobRunner: Waiting for map tasks
+2024-04-29 18:10:35,602 INFO mapred.LocalJobRunner: Starting task: attempt_local583069057_0001_m_000000_0
+2024-04-29 18:10:35,645 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2024-04-29 18:10:35,646 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2024-04-29 18:10:35,701 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2024-04-29 18:10:35,717 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/input3000/SalesJan2009.csv:0+123637
+2024-04-29 18:10:35,806 INFO mapred.MapTask: numReduceTasks: 1
+2024-04-29 18:10:36,399 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2024-04-29 18:10:36,406 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2024-04-29 18:10:36,406 INFO mapred.MapTask: soft limit at 83886080
+2024-04-29 18:10:36,406 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2024-04-29 18:10:36,406 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2024-04-29 18:10:36,430 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2024-04-29 18:10:36,527 INFO mapreduce.Job: Job job_local583069057_0001 running in uber mode : false
+2024-04-29 18:10:36,529 INFO mapreduce.Job:  map 0% reduce 0%
+2024-04-29 18:10:37,618 INFO mapred.LocalJobRunner: 
+2024-04-29 18:10:37,618 INFO mapred.MapTask: Starting flush of map output
+2024-04-29 18:10:37,618 INFO mapred.MapTask: Spilling map output
+2024-04-29 18:10:37,618 INFO mapred.MapTask: bufstart = 0; bufend = 15743; bufvoid = 104857600
+2024-04-29 18:10:37,618 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 26210404(104841616); length = 3993/6553600
+2024-04-29 18:10:37,670 INFO mapred.MapTask: Finished spill 0
+2024-04-29 18:10:37,773 INFO mapred.Task: Task:attempt_local583069057_0001_m_000000_0 is done. And is in the process of committing
+2024-04-29 18:10:37,782 INFO mapred.LocalJobRunner: hdfs://localhost:9000/input3000/SalesJan2009.csv:0+123637
+2024-04-29 18:10:37,783 INFO mapred.Task: Task 'attempt_local583069057_0001_m_000000_0' done.
+2024-04-29 18:10:37,801 INFO mapred.Task: Final Counters for attempt_local583069057_0001_m_000000_0: Counters: 23
+	File System Counters
+		FILE: Number of bytes read=3129
+		FILE: Number of bytes written=659244
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=123637
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=5
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+		HDFS: Number of bytes read erasure-coded=0
+	Map-Reduce Framework
+		Map input records=999
+		Map output records=999
+		Map output bytes=15743
+		Map output materialized bytes=17747
+		Input split bytes=100
+		Combine input records=0
+		Spilled Records=999
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=65
+		Total committed heap usage (bytes)=319291392
+	File Input Format Counters 
+		Bytes Read=123637
+2024-04-29 18:10:37,801 INFO mapred.LocalJobRunner: Finishing task: attempt_local583069057_0001_m_000000_0
+2024-04-29 18:10:37,803 INFO mapred.LocalJobRunner: map task executor complete.
+2024-04-29 18:10:37,831 INFO mapred.LocalJobRunner: Waiting for reduce tasks
+2024-04-29 18:10:37,831 INFO mapred.LocalJobRunner: Starting task: attempt_local583069057_0001_r_000000_0
+2024-04-29 18:10:37,856 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2024-04-29 18:10:37,856 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2024-04-29 18:10:37,860 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2024-04-29 18:10:37,864 INFO mapred.ReduceTask: Using ShuffleConsumerPlugin: org.apache.hadoop.mapreduce.task.reduce.Shuffle@66f5a2c1
+2024-04-29 18:10:37,866 WARN impl.MetricsSystemImpl: JobTracker metrics system already initialized!
+2024-04-29 18:10:37,899 INFO reduce.MergeManagerImpl: MergerManager: memoryLimit=802632512, maxSingleShuffleLimit=200658128, mergeThreshold=529737472, ioSortFactor=10, memToMemMergeOutputsThreshold=10
+2024-04-29 18:10:37,903 INFO reduce.EventFetcher: attempt_local583069057_0001_r_000000_0 Thread started: EventFetcher for fetching Map Completion Events
+2024-04-29 18:10:37,948 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local583069057_0001_m_000000_0 decomp: 17743 len: 17747 to MEMORY
+2024-04-29 18:10:37,953 INFO reduce.InMemoryMapOutput: Read 17743 bytes from map-output for attempt_local583069057_0001_m_000000_0
+2024-04-29 18:10:37,955 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 17743, inMemoryMapOutputs.size() -> 1, commitMemory -> 0, usedMemory ->17743
+2024-04-29 18:10:37,960 INFO reduce.EventFetcher: EventFetcher is interrupted.. Returning
+2024-04-29 18:10:37,961 INFO mapred.LocalJobRunner: 1 / 1 copied.
+2024-04-29 18:10:37,962 INFO reduce.MergeManagerImpl: finalMerge called with 1 in-memory map-outputs and 0 on-disk map-outputs
+2024-04-29 18:10:37,970 INFO mapred.Merger: Merging 1 sorted segments
+2024-04-29 18:10:37,971 INFO mapred.Merger: Down to the last merge-pass, with 1 segments left of total size: 17731 bytes
+2024-04-29 18:10:37,981 INFO reduce.MergeManagerImpl: Merged 1 segments, 17743 bytes to disk to satisfy reduce memory limit
+2024-04-29 18:10:37,981 INFO reduce.MergeManagerImpl: Merging 1 files, 17747 bytes from disk
+2024-04-29 18:10:37,982 INFO reduce.MergeManagerImpl: Merging 0 segments, 0 bytes from memory into reduce
+2024-04-29 18:10:37,982 INFO mapred.Merger: Merging 1 sorted segments
+2024-04-29 18:10:37,984 INFO mapred.Merger: Down to the last merge-pass, with 1 segments left of total size: 17731 bytes
+2024-04-29 18:10:37,985 INFO mapred.LocalJobRunner: 1 / 1 copied.
+2024-04-29 18:10:38,139 INFO mapred.Task: Task:attempt_local583069057_0001_r_000000_0 is done. And is in the process of committing
+2024-04-29 18:10:38,144 INFO mapred.LocalJobRunner: 1 / 1 copied.
+2024-04-29 18:10:38,144 INFO mapred.Task: Task attempt_local583069057_0001_r_000000_0 is allowed to commit now
+2024-04-29 18:10:38,198 INFO output.FileOutputCommitter: Saved output of task 'attempt_local583069057_0001_r_000000_0' to hdfs://localhost:9000/output300
+2024-04-29 18:10:38,204 INFO mapred.LocalJobRunner: reduce > reduce
+2024-04-29 18:10:38,205 INFO mapred.Task: Task 'attempt_local583069057_0001_r_000000_0' done.
+2024-04-29 18:10:38,205 INFO mapred.Task: Final Counters for attempt_local583069057_0001_r_000000_0: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=38655
+		FILE: Number of bytes written=676991
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=123637
+		HDFS: Number of bytes written=661
+		HDFS: Number of read operations=10
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=3
+		HDFS: Number of bytes read erasure-coded=0
+	Map-Reduce Framework
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=58
+		Reduce shuffle bytes=17747
+		Reduce input records=999
+		Reduce output records=58
+		Spilled Records=999
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=319291392
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Output Format Counters 
+		Bytes Written=661
+2024-04-29 18:10:38,206 INFO mapred.LocalJobRunner: Finishing task: attempt_local583069057_0001_r_000000_0
+2024-04-29 18:10:38,222 INFO mapred.LocalJobRunner: reduce task executor complete.
+2024-04-29 18:10:38,601 INFO mapreduce.Job:  map 100% reduce 100%
+2024-04-29 18:10:38,603 INFO mapreduce.Job: Job job_local583069057_0001 completed successfully
+2024-04-29 18:10:38,642 INFO mapreduce.Job: Counters: 36
+	File System Counters
+		FILE: Number of bytes read=41784
+		FILE: Number of bytes written=1336235
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=247274
+		HDFS: Number of bytes written=661
+		HDFS: Number of read operations=15
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=4
+		HDFS: Number of bytes read erasure-coded=0
+	Map-Reduce Framework
+		Map input records=999
+		Map output records=999
+		Map output bytes=15743
+		Map output materialized bytes=17747
+		Input split bytes=100
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=58
+		Reduce shuffle bytes=17747
+		Reduce input records=999
+		Reduce output records=58
+		Spilled Records=1998
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=65
+		Total committed heap usage (bytes)=638582784
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=123637
+	File Output Format Counters 
+		Bytes Written=661
+//(note->after successful map-reduction go to localhost:9870(for hadoop 3.3.6 user) and localhost:50070(for less than 3.3.6 versionn users))
+
